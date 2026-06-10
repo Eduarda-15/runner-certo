@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://tb5nilo2mfu4"]
+
+[ext_resource type="Script" uid="uid://edousjl3tl7v" path="res://runner.gd" id="1_5pwe8"]
+[ext_resource type="Texture2D" uid="uid://bmrsorb5i8wki" path="res://Assets Godot Runner/background.png" id="1_m3p76"]
+[ext_resource type="FontFile" uid="uid://ban4wp6x1bdev" path="res://Assets Godot Runner/PressStart2P-Regular.ttf" id="2_f7b3c"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b3ldj"]
+texture = ExtResource("1_m3p76")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f7b3c"]
+bg_color = Color(0.09803922, 0.37254903, 0.98039216, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5pwe8"]
+bg_color = Color(0.24032897, 0.6097048, 0.99618834, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hfbw2"]
+bg_color = Color(0.24705882, 0.4862745, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_44hxy"]
+bg_color = Color(0.28627452, 0.36862746, 0.99607843, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vk5uk"]
+bg_color = Color(0.26382864, 0.6093401, 0.9855618, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6v1ry"]
+bg_color = Color(0.23315257, 0.6112557, 0.9938467, 1)
+
+[node name="Menu" type="Control" unique_id=1764784065]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5pwe8")
+
+[node name="Fundo" type="Panel" parent="." unique_id=1801016319]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_b3ldj")
+
+[node name="Título" type="Label" parent="." unique_id=1116224664]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -531.0
+offset_top = -284.0
+offset_right = 589.0
+offset_bottom = -124.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 54
+theme_override_fonts/font = ExtResource("2_f7b3c")
+theme_override_font_sizes/font_size = 160
+text = "Runner!"
+
+[node name="Botões" type="VBoxContainer" parent="." unique_id=1607505574]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -79.0
+offset_right = 200.0
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 54
+
+[node name="Jogar" type="Button" parent="Botões" unique_id=588909634]
+layout_mode = 2
+theme_override_constants/outline_size = 54
+theme_override_fonts/font = ExtResource("2_f7b3c")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxFlat_f7b3c")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5pwe8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hfbw2")
+text = "Jogar"
+
+[node name="Sair" type="Button" parent="Botões" unique_id=1527603741]
+layout_mode = 2
+theme_override_constants/outline_size = 54
+theme_override_fonts/font = ExtResource("2_f7b3c")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxFlat_44hxy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vk5uk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6v1ry")
+text = "Sair"
+
+[connection signal="pressed" from="Botões/Jogar" to="." method="_on_jogar_pressed"]
+[connection signal="pressed" from="Botões/Sair" to="." method="_on_sair_pressed"]
