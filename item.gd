@@ -11,5 +11,5 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	body.vidas -= 1
+	body.pontos += 1
 	queue_free()

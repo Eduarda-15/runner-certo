@@ -5,7 +5,8 @@ func _ready() -> void:
 	velocidade = 400
 
 func _process(delta: float) -> void:
-
+	$Status/Vida.text = "Vidas: " + str(int($Jogador.vidas))
+	$Status/Pontos.text = "Pontos: " + str($Jogador.pontos)
 	# constantemente desloca o sprite pra esquerda
 	$Fundo.position.x -= velocidade * delta * 0.05
 	$Fundo2.position.x -= velocidade * delta * 0.05
