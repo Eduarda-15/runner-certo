@@ -1,15 +1,14 @@
 extends Area2D
 
-@export var velocidade: int
-func _ready() -> void:
-	velocidade = 400
+@export var velocidade: int = 400
 
 func _process(delta: float) -> void:
-	position.x  -= velocidade * delta * 2
-	if position.x < -1152: 
+	position.x  -= velocidade * delta
+	if position.x < -100: 
 		queue_free()  
 
 
 func _on_body_entered(body: Node2D) -> void:
-	body.pontos += 1
+	if "pontos" in body:
+		body.pontos += 1
 	queue_free()
