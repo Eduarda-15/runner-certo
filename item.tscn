@@ -46,5 +46,6 @@ shape = SubResource("RectangleShape2D_ttk8k")
 position = Vector2(-0.9999924, 1)
 scale = Vector2(3.8750002, 3.4687502)
 sprite_frames = SubResource("SpriteFrames_7u88n")
+autoplay = "default"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

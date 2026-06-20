@@ -1,8 +1,8 @@
 extends Area2D
 
-@export var velocidade = 400
+@export var velocidade = 200
 
-func _process(delta: float) -> void:
+func _process(delta):
 	position.x  -= velocidade * delta
 	if position.x < -100: 
 		queue_free()  
